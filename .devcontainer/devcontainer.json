@@ -1,0 +1,21 @@
+{
+	"name": "Twitch Collector",
+	"dockerFile": "Dockerfile",
+	"appPort": 3000,
+	"extensions": ["ms-python.python"],
+	"settings": {
+	  "terminal.integrated.shell.linux": "/bin/bash",
+	  "python.linting.enabled": true,
+	  "python.linting.lintOnSave": true,
+	  "python.linting.pylintEnabled": true,
+	  "python.linting.pylintPath": "/home/dev/.local/bin/pylint",
+	  "python.linting.pylintArgs": ["--enable=F,E,W,R"],
+	  "python.linting.mypyPath": "/home/dev/.local/bin/mypy",
+	  "python.linting.mypyEnabled": true,
+	  "python.linting.pycodestylePath": "/home/dev/.local/bin/pycodestyle",
+	  "python.linting.pycodestyleEnabled": true
+	},
+	"postCreateCommand": "pip install --no-cache-dir -r $PWD/requirements.txt && pip install pylint mypy pycodestyle",
+	"remoteUser": "dev",
+	"containerUser": "dev"
+}

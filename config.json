@@ -1,0 +1,11 @@
+{
+    "twitch_irc_token": "<Twitch IRC token>",
+    "twitch_irc_url": "<Twitch IRC URL>",
+    "twitch_client_id": "<Twitch app client id>",
+    "twitch_client_secret": "<Twitch app client secret>",
+    "twitch_oauth_url": "https://id.twitch.tv/oauth2/token",
+    "twitch_api_url": "https://api.twitch.tv/helix/{0}",
+    "max_stream_reconnects": 3,
+    "nickname": "<Your nickname>",
+    "telegram_api_url": "https://api.telegram.org/bot<Your bot token>/{0}"
+}
