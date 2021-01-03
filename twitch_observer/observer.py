@@ -273,13 +273,16 @@ class ActivityObserver:
 
             results = await asyncio.gather(*tasks, return_exceptions=True)
 
+            sessions_to_remove = []
             for streamer, desc in zip(self._streamers, results):
                 if isinstance(desc, StreamNotFoundError):
-                    context = self._streamers[streamer]
-                    context.task.cancel()
-                    self._remove_session(context.session)
+                    sessions_to_remove.append(self._streamers[streamer])
                 elif isinstance(desc, Exception):
                     self._log.exception(desc)
+
+            for context in sessions_to_remove:
+                context.task.cancel()
+                self._remove_session(context.session)
 
     async def _run_stream(self, session: stream.StreamSession) -> None:
         try:
