@@ -1,5 +1,5 @@
 {
-	"name": "Twitch Collector",
+	"name": "Twitch Observer",
 	"dockerFile": "Dockerfile",
 	"appPort": 3000,
 	"extensions": ["ms-python.python"],
